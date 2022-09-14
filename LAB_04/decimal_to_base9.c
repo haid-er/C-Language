@@ -1,4 +1,5 @@
-// Program to convert Base-7  Number to decimal Number
+// Program to convert decimal to base-9
+
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 

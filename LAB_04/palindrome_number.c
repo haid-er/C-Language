@@ -5,28 +5,21 @@
 int main()
 {
 	//VARIABLE DECLARATION
-	int number, temp, digit1, digit2, digit3, digit4, digit5, reverse;
+	int number, temp,digit, reverse;
+	number = temp = digit = 0;
 	char choice;
 	do
 	{
 		printf("\nPleasre Enter 5-Digit number : ");
 		scanf("%d", &number);
 		temp = number;
-		digit1 = number % 10;
-		number = number / 10;
-		digit2 = number % 10;
-		number = number / 10;
-		digit3 = number % 10;
-		number = number / 10;
-		digit4 = number % 10;
-		number = number / 10;
-		digit5 = number % 10;
-		number = number / 10;
-		reverse = digit5;
-		reverse = (digit1 * 10000) + reverse;
-		reverse = (digit2 * 1000) + reverse;
-		reverse = (digit3 * 100) + reverse;
-		reverse = (digit4 * 10) + reverse;
+		reverse = 0;
+		while (number != 0)
+		{
+			digit = number % 10;
+			number = number / 10;
+			reverse = reverse * 10 + digit;
+		}
 		printf("The Reverse Number is : %d", reverse);
 		if (temp == reverse)
 			printf("\nEntered Number is Palindrome.");
@@ -37,8 +30,8 @@ int main()
 		getchar();
 		scanf("%c", &choice);
 	} while (choice == 'Y' || choice == 'y');
-	//PRINTING OUTPUT
-
+	
+	printf("BYE BYE");
 
 
 	return 0;
