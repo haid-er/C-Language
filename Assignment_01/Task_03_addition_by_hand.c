@@ -64,7 +64,7 @@ int main()
 	// Displaying Output
 	
 	printf("\n\n");
-	printf("\t  %07d\n\t+\n\t  %07d\n\t------------\n\t  %07d", num1, num2, sum);
+	printf("\t  %7d\n\t+\n\t  %7d\n\t------------\n\t  %7d", num1, num2, sum);
 	printf("\n\n");
 	return 0;
 
