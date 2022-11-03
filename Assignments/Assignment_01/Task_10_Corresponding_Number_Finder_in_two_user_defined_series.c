@@ -10,8 +10,8 @@ int main()
 {
 	// Declaration of variables
 	
-	int seriesOneStart, seriesTwoStart, commonDifference, corespondingNumber, findNumber, count1, count2;
-	seriesOneStart = seriesTwoStart = commonDifference = corespondingNumber = findNumber = 0;
+	int seriesOneStart, seriesTwoStart, commonDifference, corespondingNumber, findNumber, count1, count2,flag;
+	seriesOneStart = seriesTwoStart = commonDifference = corespondingNumber = findNumber = flag = 0;
 	count1 = count2 = 1;
 	// seriesOneStart and seriesTwoStart will be used to take starting numbers of both series
 	// commonDifference will be used to take the common difference of series 1 from user
@@ -60,16 +60,20 @@ int main()
 		{
 			// printf("%d\t%d\t%d\t%d\n", i, j, count1, count2); // this statement is just to check the values
 			if (count1 == count2 && i == findNumber)
-				corespondingNumber = j;	
+			{
+				flag = 1;
+				corespondingNumber = j;
+			}
 			count2++;
 		}
 		count1++;
 	}
 
 	// Displaying Output
-
-	printf("Your Corresponding number is %d .", corespondingNumber);
-	
+	if (flag == 1)
+		printf("Your Corresponding number is %d .", corespondingNumber);
+	else
+		printf("Number not found in Series.");
 	return 0;
 
 }
