@@ -61,7 +61,7 @@ void numberToWords(num)
         {
             inWords(digit[2]);
             if (digit[2] != 0)
-                printf("Hundrad ");
+                printf("Hundred ");
             if (digit[1] + digit[0] != 0)
                 printf("and ");
             tenToTwenty(digit[0]+10);
@@ -70,7 +70,7 @@ void numberToWords(num)
         {
             inWords(digit[2]);
             if (digit[2] != 0)
-                printf("Hundard ");
+                printf("Hundred ");
             if (digit[1] + digit[0] != 0)
                 printf("and ");
             tenPlace(digit[1]);
@@ -95,7 +95,7 @@ void numberToWords(num)
         {
             inWords(digit[2]);
             if (digit[2] != 0)
-                printf("Hundrad ");
+                printf("Hundred ");
             if (digit[1] + digit[0] != 0)
                 printf("and ");
             tenToTwenty(digit[0] + 10);
@@ -104,7 +104,7 @@ void numberToWords(num)
         {
             inWords(digit[2]);
             if (digit[2] != 0)
-                printf("Hundard ");
+                printf("Hundred ");
             if (digit[1] + digit[0] != 0)
                 printf("and ");
             tenPlace(digit[1]);
