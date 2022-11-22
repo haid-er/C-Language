@@ -10,6 +10,12 @@ int isAlphaNumeric(char c);		//Return true if given character is a alphabet or n
 int isHexaDigit(char c);		//Return true if given character is a Hexadecimal value
 int isSpace(char c);			//Return true if given character is a space
 int isPunctuation(char c);		//Return true if given character is a symbol
+int isBlank(char c);			//Return true if given character is a blank
+int isPrint(char c);			//Return true if given character is a printable including space
+int isGraph(char c);			//Return true if given character is a printable excluding space 
+int isCntrl(char c);			//Return true if given character is a control character like \t \n \v \a
+int toLower(char c);			//Return the lower case letter of given letter
+int toUpper(char c);			//Return the upper case letter of given letter
 int main()
 {
 	// Declaration of variables
@@ -150,4 +156,45 @@ int isPunctuation(char c)
 	else
 		return 0;
 }
-
+int isBlank(char c)
+{
+	if (c == '\0')
+		return 1;
+	else
+		return 0;
+}
+int isPrint(char c)
+{
+	if (c >= 32)
+		return 1;
+	else
+		return 0;
+}
+int isGraph(char c)
+{
+	if (c <= 32)
+		return 0;
+	else
+		return 1;
+}
+int isCntrl(char c)
+{
+	if (c == '\t' || c == '\v' || c == '\f' || c == '\a' || c == '\b' || c == '\r' || c == '\n')
+		return 1;
+	else
+		return 0;
+}
+int toLower(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return c + 32;
+	else
+		return c;
+}
+int toUpper(char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return c - 32;
+	else
+		return c;
+}
