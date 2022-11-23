@@ -4,29 +4,7 @@
 #include<conio.h>
 #include<string.h>
 #define SIZE 30
-/// <summary>
-///		This function will compare two strigs
-/// </summary>
-/// <param name="str1">will take first string</param>
-/// <param name="str2">will take second string</param>
-/// <returns>
-///		will return 1 if both strings are equal 
-///		will return 2 if both strings are unequal and 1st string is greater than second string
-///		will return 3 if both strings are unequal and 1st string is smaller than 2nd string
-///		will return 4 if both strings are equal in length but unequal in content
-/// </returns>
 int strCompare(char const* str1, char const* str2);
-/// <summary>
-///		This function can compare a string with some piece of string
-/// </summary>
-/// <param name="str1">Takes main string</param>
-/// <param name="str2">takes string part to compare</param>
-/// <param name="length">takes length of second string to compare with the first</param>
-/// <returns>
-///		0 if string portion is equal to the 1st string
-///		positive number not equal to the 1st string
-///		negative number if string portion is less than the given length or not equal to the 1st string
-///	</returns>
 int strComparePortion(char const* str1, char const* str2, int size);
 int main()
 {
@@ -74,6 +52,17 @@ int main()
 
 	return 0;
 }
+/// <summary>
+///		This function will compare two strigs
+/// </summary>
+/// <param name="str1">will take first string</param>
+/// <param name="str2">will take second string</param>
+/// <returns>
+///		will return 1 if both strings are equal 
+///		will return 2 if both strings are unequal and 1st string is greater than second string
+///		will return 3 if both strings are unequal and 1st string is smaller than 2nd string
+///		will return 4 if both strings are equal in length but unequal in content
+/// </returns>
 int strCompare(char const* str1, char const* str2)
 {
 	int counter, length1, length2;
@@ -103,6 +92,17 @@ int strCompare(char const* str1, char const* str2)
 		return 1;
 	}
 }
+/// <summary>
+///		This function can compare a string with some piece of string
+/// </summary>
+/// <param name="str1">Takes main string</param>
+/// <param name="str2">takes string part to compare</param>
+/// <param name="length">takes length of second string to compare with the first</param>
+/// <returns>
+///		0 if string portion is equal to the 1st string
+///		positive number not equal to the 1st string
+///		negative number if string portion is less than the given length or not equal to the 1st string
+///	</returns>
 int strComparePortion(char const* str1, char const* str2, int size)
 {
 	int counter, length1, length2;

@@ -42,6 +42,10 @@ int main()
 	return 0;
 
 }
+/// <summary>
+/// This function will initialize the array with stars
+/// </summary>
+/// <param name="arr">Array which we want to initialize</param>
 void intializeWithStars(char* arr)
 {
 	for (int i = 0; i < SIZE * SIZE; i++)
@@ -50,6 +54,10 @@ void intializeWithStars(char* arr)
 		arr++;
 	}
 }
+/// <summary>
+/// THis funciton will display all values of array
+/// </summary>
+/// <param name="arr">Array which we want to display</param>
 void display(char* arr)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
@@ -64,6 +72,11 @@ void display(char* arr)
 	printf("\n");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);
 }
+/// <summary>
+/// This funciton will check if any choice for any player left to play the given further
+/// </summary>
+/// <param name="arr">Array of data</param>
+/// <returns>Will return 1 if any choice for player left to play more otherwise return 0</returns>
 int anyChoiceLeft(char* arr)
 {
 	for (int i = 0; i < SIZE * SIZE; i++)
@@ -77,14 +90,24 @@ int anyChoiceLeft(char* arr)
 	}
 	return 0;
 }
+/// <summary>
+/// This is the main function in which all the game play is done
+/// </summary>
+/// <param name="arr">Array of stars</param>
 void playGame(char arr[SIZE][SIZE])
 {
 	char* p = *arr;
 	int xp1, yp1, xp2, yp2, decision, flagTie;
 	xp1 = yp1 = xp2 = yp2 = decision = 0;
 	flagTie = 1;
+	/// <summary>
+	/// This loop will iterate for unless any break statement does not execute
+	/// any break statement will execute if the player has no more choice to play the game or any player win the game
+	/// </summary>
+	/// <param name="arr"></param>
 	do
 	{
+		// This loop will take input from player 1 unless he enters the valid value
 		do
 		{
 			getChoice("Player1", &xp1, &yp1);
@@ -94,7 +117,8 @@ void playGame(char arr[SIZE][SIZE])
 		arr[xp1][yp1] = 'X';
 		display(p);
 		decision = decisionMaking(arr);
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);		// This line will change the color of the statements to purple
+		// These conditions will check if any player win or not
 		if (decision == 1)
 		{
 			printf("\nPlayer 1 Win the Game ! \n\n\t<---------- CONGRATULATIONS PLAYER 1 ---------->\n\n");
@@ -107,9 +131,10 @@ void playGame(char arr[SIZE][SIZE])
 			flagTie = 0;
 			break;
 		}
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);		// This line will change the color of the statements to default color white
 		if (anyChoiceLeft(p) != 1)
 			break;
+		// This loop will take input from player 2 unless he enters the valid value
 		do
 		{
 			getChoice("Player2", &xp1, &yp1);
@@ -118,7 +143,8 @@ void playGame(char arr[SIZE][SIZE])
 		} while (isChoiceValid(arr, &xp1, &yp1));
 		arr[xp1][yp1] = 'O';
 		display(p);
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);	// This line will change the color of the statements to purple
+		// These conditions will check if any player win or not
 		decision = decisionMaking(arr);
 		if (decision == 1)
 		{
@@ -132,19 +158,26 @@ void playGame(char arr[SIZE][SIZE])
 			flagTie = 0;
 			break;
 		}
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);		// This line will change the color of the statements to default color white
 		if (anyChoiceLeft(p) != 1)
 			break;
 	} while (1);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);	// This line will change the color of the statements to purple
+	// This statement will only execute if the none of player win the game and match is tied
 	if (flagTie == 1)
 	{
 		printf("\nBoth Player played well ! \n\n\t<---------- Match Tied --------->\n\n");
 	}
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x07);		// This line will change the color of the statements to default white
 
 
 }
+/// <summary>
+/// This function will take input from user in form of row number and column number 
+/// </summary>
+/// <param name="str">This string represent the player for which we want to take input</param>
+/// <param name="x">its value of row number </param>
+/// <param name="y">its for value of column number</param>
 void getChoice(char *str, int* x, int* y)
 {
 	do
@@ -164,6 +197,17 @@ void getChoice(char *str, int* x, int* y)
 	*x = *x - 1;
 	*y = *y - 1;
 }
+/// <summary>
+/// This function will check if the user enter the valid choice for the row and column number
+/// </summary>
+/// <param name="arr">This is array in which data is stored</param>
+/// <param name="x">its value of row number</param>
+/// <param name="y">its value of column number</param>
+/// <returns>
+///		it will return true if there exist a star on the given location means user can add his choice to that position
+///		it will return false if there exist a value of user choice which he added before
+///		it will return false if the given position does not exist in the row
+/// </returns>
 int isChoiceValid(char arr[SIZE][SIZE], int* x, int* y)
 {
 	if (arr[*x][*y] == '*')
@@ -171,6 +215,15 @@ int isChoiceValid(char arr[SIZE][SIZE], int* x, int* y)
 	else
 		return 1;
 }
+/// <summary>
+/// This function will check if any player win with the given choices
+/// </summary>
+/// <param name="arr">Given data in array</param>
+/// <returns>
+///		it will return 1 if the player 1 win the game with the given choices
+///		it will return 2 if the player 2 win the game with the given choices
+///		it will return 3 if none of the player win the game and game should be continued
+/// </returns>
 int decisionMaking(char arr[SIZE][SIZE])
 {
 	// checking if row elements are equal 

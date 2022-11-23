@@ -32,6 +32,10 @@ int main()
 	return 0;
 
 } 
+/// <summary>
+/// THis funciton will display all values of array
+/// </summary>
+/// <param name="arr">Array which we want to display</param>
 void displayArray(int a[], int s)
 {
 	for (int i = 0; i < s; i++)
@@ -40,6 +44,10 @@ void displayArray(int a[], int s)
 	}
 	printf("\n");
 }
+/// <summary>
+/// THis funciton will get input for all values of array
+/// </summary>
+/// <param name="arr">Array for which we want to take input</param>
 void getInput(int a[], int s)
 {
 	for (int i = 0; i < s; i++)
@@ -48,6 +56,12 @@ void getInput(int a[], int s)
 		scanf("%d", &a[i]);
 	}
 }
+/// <summary>
+/// This funcion will find the median and then return the value
+/// </summary>
+/// <param name="a">given data or array</param>
+/// <param name="s">size of arrat</param>
+/// <returns>will return the calculated median</returns>
 double findMedian(int* a, int s)
 {
 	double med = 10;

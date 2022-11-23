@@ -81,6 +81,11 @@ int main()
 
 	return 0;
 }
+/// <summary>
+/// This function will add all the elements and return sum of all
+/// </summary>
+/// <param name="arr">Given array which we want to find sum</param>
+/// <returns>Sum of all elements</returns>
 int getTotal(int arr[ROWS][COLS])
 {
 	int sum = 0;
@@ -93,6 +98,11 @@ int getTotal(int arr[ROWS][COLS])
 	}
 	return sum;
 }
+/// <summary>
+/// This function will perform operation to calculate average of all the items in array
+/// </summary>
+/// <param name="arr">The array for which we want to find average</param>
+/// <returns>Average of all items</returns>
 float getAverage(int arr[ROWS][COLS])
 {
 	int sum = 0;
@@ -106,6 +116,12 @@ float getAverage(int arr[ROWS][COLS])
 	return ((float)sum / (ROWS * COLS));
 
 }
+/// <summary>
+/// This function will calculate sum of all items in a single line
+/// </summary>
+/// <param name="arr">Array for which we want calculation</param>
+/// <param name="row">Row for which we want to find sum</param>
+/// <returns>Sum of all items in a row</returns>
 int getRowTotal(int arr[ROWS][COLS], int row)
 {
 	row--;
@@ -116,6 +132,12 @@ int getRowTotal(int arr[ROWS][COLS], int row)
 	}
 	return sum;
 }
+/// <summary>
+/// This function will calculate sum of all items in a single column
+/// </summary>
+/// <param name="arr">Array for which we want calculation</param>
+/// <param name="col">Column for which we want to find sum</param>
+/// <returns>Sum of all items in a column</returns>
 int getColTotal(int arr[ROWS][COLS], int col)
 {
 	col--;
@@ -126,6 +148,12 @@ int getColTotal(int arr[ROWS][COLS], int col)
 	}
 	return sum;
 }
+/// <summary>
+/// This function will find highest item in given row
+/// </summary>
+/// <param name="arr">Array for which we find the highest item</param>
+/// <param name="row">Row number for which we want to find highest item</param>
+/// <returns>The highest value of array</returns>
 int getHighestInRow(int arr[ROWS][COLS], int row)
 {
 	row--;
@@ -140,6 +168,12 @@ int getHighestInRow(int arr[ROWS][COLS], int row)
 	}
 	return temp;
 }
+/// <summary>
+/// This function will find lowest item in given row
+/// </summary>
+/// <param name="arr">Array for which we find the lowest item</param>
+/// <param name="row">Row number for which we want to find lowest item</param>
+/// <returns>The smallest value of array</returns>
 int getLowestInRow(int arr[ROWS][COLS], int row)
 {
 	row--;

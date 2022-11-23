@@ -35,6 +35,11 @@ int main()
 	return 0;
 
 }
+/// <summary>
+/// This function will check if the given input is a numeric data
+/// </summary>
+/// <param name="arr">The data</param>
+/// <returns>will return 1 if there are more than 1 dots or any other character than digits exist in array</returns>
 int checkIfNumber(char* arr)
 {
 	int i = 0;
@@ -57,6 +62,11 @@ int checkIfNumber(char* arr)
 	else
 		return 0;
 }
+/// <summary>
+/// This function will take the input as string and then convert it into a number
+/// </summary>
+/// <param name="arr">given data as string</param>
+/// <returns>interger</returns>
 int convertToInt(char* arr)
 {
 	int i = 0, num = 0;
@@ -69,6 +79,11 @@ int convertToInt(char* arr)
 	}
 	return num;
 }
+/// <summary>
+/// This function will take the input as string and then convert it into a float number
+/// </summary>
+/// <param name="arr">given data as string</param>
+/// <returns>floating point number of string</returns>
 float convertToFloat(const char* nptr)
 {
 	int i = 0, flag = 0;

@@ -50,6 +50,11 @@ int main()
 	return 0;
 
 }
+/// <summary>
+/// This function will display the given parameter
+/// </summary>
+/// <param name="a">Array to print</param>
+/// <param name="s">Size of that array</param>
 void displayArray(int a[], int s)
 {
 	for (int i = 0; i < s; i++)
@@ -58,6 +63,11 @@ void displayArray(int a[], int s)
 	}
 	printf("\n");
 }
+/// <summary>
+/// This function will get input from user
+/// </summary>
+/// <param name="a">the array to store the user input</param>
+/// <param name="s">size of that array</param>
 void getInput(int a[], int s)
 {
 	for (int i = 0; i < s; i++)
@@ -66,6 +76,12 @@ void getInput(int a[], int s)
 		scanf("%d", &a[i]);
 	}
 }
+/// <summary>
+/// This function will rotate items according to given params
+/// </summary>
+/// <param name="arr">Array in which items will rotate</param>
+/// <param name="n">Size of given array</param>
+/// <param name="k">the order given according to which items will rotate</param>
 void cyclicRotate(int arr[], int n, int k)
 {
 	int temp = 0;
