@@ -1,0 +1,5 @@
+Hello world
+of
+computer
+programming.
+C language syntax is difficult.
