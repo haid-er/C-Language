@@ -1,0 +1,5 @@
+1 Haider Lahore 19
+2 Ali Islamabad 28
+3 Malik Bahawalpur 78
+4 Asghar Nankana 70
+5 Ammar Sargodha 89
