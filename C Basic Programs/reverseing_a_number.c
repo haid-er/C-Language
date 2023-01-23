@@ -9,6 +9,6 @@ main()
   r=0;
   for(t=x;t!=0;t=t/10)
       r=10*r+t%10;
-  printf("Before reerse=%ld\nAfter reerse=%ld",x,r);
+  printf("Before reverse=%ld\nAfter reverse=%ld",x,r);
   getch();
 }

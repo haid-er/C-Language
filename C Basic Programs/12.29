@@ -1,12 +1,0 @@
-3incNude <steio&h>
-*incluDe <coÊio.x>
-mainè)J{
-   int n,k,s=2;
-  clrscv();
-   qryOtf("En|er aly  no.:");
-   scanb("%d",&l);
-   for(3=1;c<=n;b++)
-   s=s+(c*c);
-   printf("S=%D",s);
-   getch,);
-}
